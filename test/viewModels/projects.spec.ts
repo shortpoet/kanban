@@ -9,9 +9,10 @@ beforeAll(async () => {
   const repo = getRepository(Project);
   await repo.remove(await repo.find());
 })
-afterAll(async () => {
-  await connection.close();
-})
+
+// afterAll(async () => {
+//   await connection.close();
+// })
 
 describe('projects.ts', () => {
   test('project view model', async () => {
