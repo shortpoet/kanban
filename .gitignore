@@ -1,0 +1,14 @@
+*.env
+*/.env
+/env
+*/env
+
+*.config
+*/.config
+/config
+*/config
+
+*/node_modules
+
+*/bin
+*/obj
