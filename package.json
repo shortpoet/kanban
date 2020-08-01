@@ -8,13 +8,13 @@
    "private": false,
    "dependencies": {
       "@types/node": "^14.0.27",
-      "pg": "^8.3.0",
+      "pg": "^7.3.0",
       "reflect-metadata": "^0.1.10",
       "typeorm": "0.2.25"
    },
    "devDependencies": {
-      "ts-node": "3.3.0",
       "@types/node": "^8.0.29",
+      "ts-node": "3.3.0",
       "typescript": "3.3.3333"
    },
    "scripts": {
