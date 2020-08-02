@@ -1,5 +1,5 @@
 # VSCode
-FROM node:12.18-alpine
+FROM node:12
 # nodejs.org
 # FROM node:12
 
@@ -14,15 +14,18 @@ WORKDIR /usr/src/app
 # COPY package*.json
 
 # custom
-COPY package*.json *.lock.json ./
+COPY package*.json *.lock ./
 
-# VSCode and nodejs.org
+# VSCode
+# RUN npm install && mv node_modules ../
+# nodejs.org
 # RUN npm install
 
 # custom
-RUN yarn install && mv node_modules ../
+# RUN yarn install && mv node_modules ../
 # to suppress warnings
 # [ "/bin/bash", "-c", "yarn install 2> >(grep -v warning 1>&2)"]
+RUN [ "/bin/bash", "-c", "yarn install 2> >(grep -v warning 1>&2) && mv node_modules ../"]
 
 # nodejs.org
 # If you are building your code for production

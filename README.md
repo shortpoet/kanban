@@ -50,3 +50,17 @@ CREATE DATABASE kanban
 \set ON_ERROR_STOP on
 \i create_schema.psql
 ```
+
+## postgres commands
+
+show all tables
+
+```postgresql
+\dt
+```
+
+show all tables verbose
+
+```postgresql
+\dt+
+```
