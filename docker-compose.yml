@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  kanban:
+    image: kanban
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000
+      - 4000
+      - 5000
+      - 8080
+  
+  postgres:
+    image: latest
