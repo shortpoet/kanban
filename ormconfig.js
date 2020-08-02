@@ -1,10 +1,14 @@
-{
+require("dotenv").config();
+
+// https://github.com/typeorm/typeorm/issues/510
+
+module.exports = {
    "type": "postgres",
-   "host": "localhost",
+   "host": process.env.POSTGRES_HOST,
    "port": 5432,
-   "username": "test",
-   "password": "test",
-   "database": "kanban",
+   "username": process.env.POSTGRES_USER,
+   "password": process.env.POSTGRES_PASSWORD,
+   "database": process.env.POSTGRES_DB,
    "synchronize": false,
    "logging": true,
    "entities": [
@@ -21,4 +25,4 @@
       "migrationsDir": "src/migration",
       "subscribersDir": "src/subscriber"
    }
-}
+};

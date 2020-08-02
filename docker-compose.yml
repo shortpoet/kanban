@@ -12,7 +12,7 @@ services:
     stdin_open: true
     working_dir: /usr/src/app
     env_file:
-      - '.env'
+      - 'docker.env'
     environment:
       NODE_ENV: production
     ports:
@@ -24,6 +24,7 @@ services:
       - .:/usr/src/app
     networks:
       - kanbannet
+    command: yarn start
   
   # https://gist.github.com/onjin/2dd3cc52ef79069de1faa2dfd456c945
   db:
@@ -34,7 +35,7 @@ services:
     volumes:
       - ./sql/create_schema.sql:/docker-entrypoint-initdb.d/create_schema.sql:ro
     env_file:
-      - '.env'
+      - 'docker.env'
     ports:
       - 5432:5432
     networks:

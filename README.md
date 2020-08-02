@@ -42,6 +42,7 @@ CREATE DATABASE kanban
 <https://www.postgresqltutorial.com/postgresql-drop-database/>
 <https://stackoverflow.com/questions/46773363/granted-all-privileges-on-my-postgres-table-but-still-am-getting-a-permission>
 <https://serverfault.com/questions/198002/postgresql-what-does-grant-all-privileges-on-database-do> (sequences and tables)
+<https://notathoughtexperiment.me/blog/how-to-connect-to-postgres-in-docker-container/>
 
 - user that creates has privileges
 

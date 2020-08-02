@@ -31,7 +31,7 @@
       "vue-jest": "^3.0.6"
    },
    "scripts": {
-      "start": "ts-node src/index.ts",
+      "start": "ts-node src/rest/index.ts",
       "test": "jest test"
    }
 }

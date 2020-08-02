@@ -6,5 +6,9 @@ import { projects } from './projects';
   await createConnection();
   const app = express();
   app.use('/projects', projects);
-  app.listen(5000);
+  console.log(process.env.DOCKER);
+  
+  process.env.DOCKER == '1'
+    ? await app.listen(5000, '0.0.0.0')
+    : await app.listen(5000)
 })();

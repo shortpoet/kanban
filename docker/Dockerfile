@@ -14,7 +14,7 @@ WORKDIR /usr/src/app
 # COPY package*.json
 
 # custom
-COPY package*.json *.lock ./
+COPY package*.json yarn.lock ./
 
 # VSCode
 # RUN npm install && mv node_modules ../
@@ -25,7 +25,10 @@ COPY package*.json *.lock ./
 # RUN yarn install && mv node_modules ../
 # to suppress warnings
 # [ "/bin/bash", "-c", "yarn install 2> >(grep -v warning 1>&2)"]
-RUN [ "/bin/bash", "-c", "yarn install 2> >(grep -v warning 1>&2) && mv node_modules ../"]
+# to resuse lockfile
+# --pure-lockfile
+# https://github.com/yarnpkg/yarn/issues/749#issuecomment-253253608
+RUN [ "/bin/bash", "-c", "yarn install --pure-lockfile 2> >(grep -v warning 1>&2) && mv node_modules ../"]
 
 # nodejs.org
 # If you are building your code for production
