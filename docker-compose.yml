@@ -2,15 +2,31 @@ version: '3.4'
 
 services:
   kanban:
-    image: kanban
-    build: .
+    image: shortpoet/kanban
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    tty: true
+    stdin_open: true
+    working_dir: /usr/src/app
+    env_file:
+      - '.env'
     environment:
       NODE_ENV: production
     ports:
-      - 3000
-      - 4000
-      - 5000
-      - 8080
+      # - 3000
+      # - 4000
+      - 5000:5000
+      # - 8080
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - kanbannet
   
-  postgres:
+  db:
     image: latest
+
+networks:
+  kanbannet:
