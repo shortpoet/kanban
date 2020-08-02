@@ -9,7 +9,7 @@ typeorm init --database postgres
 yarn add --dev jest typescript
 yarn add --dev ts-jest @types/jest
 yarn ts-jest config:init
-
+yarn add --dev express express-graphql graphql @types/cors @types/express @vue/test-utils class-validator cors ts-node-dev type-graphql vite vue-jest
 ```
 
 ## postgres (windows setup)
