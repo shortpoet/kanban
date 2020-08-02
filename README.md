@@ -43,6 +43,12 @@ CREATE DATABASE kanban
 <https://stackoverflow.com/questions/46773363/granted-all-privileges-on-my-postgres-table-but-still-am-getting-a-permission>
 <https://serverfault.com/questions/198002/postgresql-what-does-grant-all-privileges-on-database-do> (sequences and tables)
 <https://notathoughtexperiment.me/blog/how-to-connect-to-postgres-in-docker-container/>
+<https://hub.docker.com/_/postgres>
+<https://docs.docker.com/engine/examples/postgresql_service/>
+<https://towardsdatascience.com/local-development-set-up-of-postgresql-with-docker-c022632f13ea>
+<https://hackernoon.com/dont-install-postgres-docker-pull-postgres-bee20e200198>
+<https://nodejs.org/en/docs/guides/nodejs-docker-webapp/>
+<http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/>
 
 - user that creates has privileges
 
