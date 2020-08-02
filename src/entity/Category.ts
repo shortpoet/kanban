@@ -14,6 +14,7 @@ export class Category {
 
   @ManyToOne(type => Project, project => project.categories)
 
-  @JoinColumn({ name: 'project_id'})
+  @JoinColumn({ name: 'project_id' })
+    
   project: Project
 }
