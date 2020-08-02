@@ -47,6 +47,8 @@ COPY . .
 # VSCode && nodejs.org
 EXPOSE 5000
 
+LABEL maintainer="Carlos Soriano <shortpoet@github>"
+
 # nodejs.org
 # CMD [ "node", "server.js" ]
 
