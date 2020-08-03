@@ -1,9 +1,13 @@
-import { RestProject, projectViewModel } from "../../src/viewModels/projects";
+import { projectViewModel } from "../../src/viewModels/project";
+import { IProject } from "../../src/interfaces/IProject";
 import { Connection, createConnection, getRepository } from "typeorm";
 import { Project } from "../../src/entity/Project";
-import { createProject } from "../projects";
+import { createProject } from "../factories/projects";
 import { Category } from "../../src/entity/Category";
-import { createCategory } from "../categories";
+import { createCategory } from "../factories/categories";
+import { Task } from "../../src/entity/Task";
+import { createTask } from "../factories/tasks";
+import { IProjectDTO } from "../../src/interfaces/IProjectDTO";
 
 let connection: Connection;
 
@@ -17,25 +21,41 @@ afterAll(async () => {
   await connection.close();
 });
 
-describe('projects.ts', () => {
+describe('projects.vm.ts', () => {
   test('project view model', async () => {
     const project = await createProject({ name: 'Project' });
     const category = await createCategory({ name: 'Category' }, project);
-    const expected: RestProject[] = [
+    const task = await createTask({ name: 'Task' }, project, category);
+    const expected: IProjectDTO[] = [
       {
         id: project.id,
         name: 'Project',
         categories: [
           {
             id: category.id,
-            name: 'Category'
+            name: 'Category',
+            tasks: category.tasks,
+            projectId: project.id,
+          }
+        ],
+        tasks: [
+          {
+            id: task.id,
+            name: 'Task',
+            projectId: project.id,
+            categoryId: category.id
           }
         ]
       }
     ];
 
     const actual = await projectViewModel();
+    // console.log((JSON.stringify(actual)));
+    // console.log((JSON.stringify(expected)));
+    // console.log(JSON.parse(JSON.stringify(actual)));
+    // console.log(JSON.parse(JSON.stringify(expected)));
+    
 
-    expect(actual).toEqual(expected);
+    expect(actual).toStrictEqual(expected);
   });
 });

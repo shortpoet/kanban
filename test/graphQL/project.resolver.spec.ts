@@ -1,9 +1,8 @@
-import { RestProject, projectViewModel } from "../../src/viewModels/projects";
 import { Connection, createConnection, getRepository } from "typeorm";
 import { Project } from "../../src/entity/Project";
-import { createProject } from "../projects";
+import { createProject } from "../factories/projects";
 import { Category } from "../../src/entity/Category";
-import { createCategory } from "../categories";
+import { createCategory } from "../factories/categories";
 import { buildSchema } from "type-graphql";
 import { ProjectsResolver } from "../../src/graphQL/project.resolvers";
 import { generateSchema } from "../../src/graphQL/generateSchema";
@@ -50,6 +49,9 @@ describe('project.resolvers.ts', () => {
             categories{
               id
               name
+            }
+            tasks{
+              
             }
           }
         }
