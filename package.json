@@ -31,7 +31,10 @@
       "vue-jest": "^3.0.6"
    },
    "scripts": {
-      "start": "ts-node src/rest/index.ts",
+      "start:rest": "ts-node src/rest/index.ts",
+      "start:graph": "ts-node src/graphql/index.ts",
+      "dev:rest": "ts-node-dev src/rest/index.ts",
+      "dev:graph": "ts-node-dev src/graphql/index.ts",
       "test": "jest test"
    }
 }

@@ -14,10 +14,16 @@ Can be run using docker.
 yarn install
 ```
 
-- launch app
+- launch rest api
 
 ```bash
-yarn start
+yarn start:rest
+```
+
+- launch rest api
+
+```bash
+yarn start:graph
 ```
 
 - run tests

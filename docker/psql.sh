@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source "$DIR/colors.cfg"
 echo -e "${Cyan}The ${Yellow}postgres psql ${Cyan}script has been executed"
