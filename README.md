@@ -1,4 +1,76 @@
-# setup
+# kanban
+
+This is an extension of a kanban board featured in [some screencasts](https://vuejs-course.com/screencasts) [by](https://twitter.com/Lachlan19900).
+
+It uses Vue 3 for the frontend and PostgreSQL, TypeORM, and Express for the backend.
+
+Can be run using docker.
+
+## usage
+
+- install dependencies
+
+```bash
+yarn install
+```
+
+- launch app
+
+```bash
+yarn start
+```
+
+- run tests
+
+```bash
+yarn test
+```
+
+- setup docker containers using compose
+
+```bash
+./docker/build.sh
+```
+
+- run docker containers
+
+```bash
+docker-compose up
+```
+
+- take down containers and wipe docker volumes
+
+```bash
+./docker/wipe.sh
+```
+
+- shell into database
+
+```bash
+./docker/db-shell.sh
+```
+
+- run tests in container
+
+```bash
+./docker/app-run-test.sh
+```
+
+- shell into app
+
+  - using docker run
+
+```bash
+./docker/app-run-shell.sh
+```
+
+or into running container using docker exec
+
+```bash
+./docker/app-shell.sh
+```
+
+## setup
 
 ```bash
 git init
@@ -28,7 +100,7 @@ from create script in pgAdmin
 
 ```sql
 CREATE DATABASE kanban
-    WITH 
+    WITH
     OWNER = postgres
     ENCODING = 'UTF8'
     LC_COLLATE = 'English_United States.1252'

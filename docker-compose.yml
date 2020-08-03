@@ -35,6 +35,7 @@ services:
     # file must end in .sql not .psql
     volumes:
       - ./sql/create_schema.sql:/docker-entrypoint-initdb.d/create_schema.sql:ro
+      - ./postgres-data:/var/lib/postgresql/data
     env_file:
       - 'docker.env'
     ports:
@@ -44,3 +45,6 @@ services:
 
 networks:
   kanbannet:
+
+volumes:
+  postgres-data:
