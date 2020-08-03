@@ -11,6 +11,7 @@ export const projectViewModel = async (): Promise<IProjectDTO[]> => {
     .createQueryBuilder('project')
     .innerJoinAndSelect('project.tasks', 'tasks')
     .innerJoinAndSelect('project.categories', 'categories')
+    .innerJoinAndSelect('categories.tasks', 'categorytasks')
     .getMany();
   const out: IProjectDTO[] = (await repo).map(x => ({
     id: x.id,
@@ -18,5 +19,7 @@ export const projectViewModel = async (): Promise<IProjectDTO[]> => {
     categories: x.categories.map(y => <ICategoryDTO>({ id: y.id, name: y.name, projectId: y.projectId, tasks: y.tasks })),
     tasks: x.tasks.map(y => <ITaskDTO>({ id: y.id, name: y.name, projectId: y.projectId, categoryId: y.categoryId }))
   }));
+  console.log(out[0].categories);
+  
   return out;
 };

@@ -1,11 +1,8 @@
 import { projectViewModel } from "../../src/viewModels/project";
-import { IProject } from "../../src/interfaces/IProject";
 import { Connection, createConnection, getRepository } from "typeorm";
 import { Project } from "../../src/entity/Project";
 import { createProject } from "../factories/projects";
-import { Category } from "../../src/entity/Category";
 import { createCategory } from "../factories/categories";
-import { Task } from "../../src/entity/Task";
 import { createTask } from "../factories/tasks";
 import { IProjectDTO } from "../../src/interfaces/IProjectDTO";
 
