@@ -1,6 +1,6 @@
 # kanban
 
-This is an extension of a kanban board featured in [some screencasts](https://vuejs-course.com/screencasts) [by](https://twitter.com/Lachlan19900).
+This is an extension of a kanban board featured in [some screencasts](https://vuejs-course.com/screencasts) by [@Lachlan19900](https://twitter.com/Lachlan19900).
 
 It uses Vue 3 for the frontend and PostgreSQL, TypeORM, and Express for the backend.
 
@@ -56,15 +56,13 @@ docker-compose up
 ./docker/app-run-test.sh
 ```
 
-- shell into app
-
-  - using docker run
+- shell into app using docker run
 
 ```bash
 ./docker/app-run-shell.sh
 ```
 
-or into running container using docker exec
+- or into running container using docker exec
 
 ```bash
 ./docker/app-shell.sh
