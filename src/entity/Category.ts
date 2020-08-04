@@ -23,7 +23,7 @@ export class Category {
   @JoinColumn({ name: 'project_id' })    
   project: Project
 
-  @Field(type => [Category])
+  @Field(type => [Task])
   @OneToMany(type => Task, task => task.category)
   tasks: Task[]
 

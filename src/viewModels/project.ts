@@ -12,6 +12,8 @@ export const projectViewModel = async (): Promise<IProjectDTO[]> => {
     .innerJoinAndSelect('project.categories', 'categories')
     .innerJoinAndSelect('categories.tasks', 'categorytasks')
     .getMany();
+  console.log(JSON.stringify(await repo));
+  
   const out: IProjectDTO[] = (await repo).map(x => ({
     id: x.id,
     name: x.name,
