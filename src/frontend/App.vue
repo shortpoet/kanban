@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <SelectProject :projects="projects" v-model="selectedProject" />
+  <SelectProject :projects="projects" v-model="selectedProject" />
+  <div class="categories">
+    <Category
+      v-for="category in categories"
+      :key="category.id"
+      :category="category"
+    />
   </div>
 </template>
 
@@ -8,9 +13,10 @@
 import { defineComponent, ref, computed, watch } from "vue";
 import { store } from "./store";
 import SelectProject from "./SelectProject.vue";
+import Category from "./Category.vue";
 
 export default defineComponent({
-  components: { SelectProject },
+  components: { SelectProject, Category },
   setup() {
     store.fetchProjects();
     const selectedProject = ref<string>();
@@ -20,10 +26,17 @@ export default defineComponent({
     });
     return {
       projects: computed(() => store.getState().projects),
+      // use nullable operator to short circuit out if currentProject or categories is undefined
+      categories: computed(() => store.getState().currentProject?.categories),
       selectedProject,
     };
   },
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.categories {
+  margin: 10px 0 0 0;
+  display: flex;
+}
+</style>
