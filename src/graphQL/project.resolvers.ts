@@ -23,12 +23,9 @@ export class ProjectsResolver {
       .where('project.id = :id', { id: id })
       .getOne();
     console.log(project);
-    
-
     if (!project) {
       throw Error(`Project with id ${id} not found`);
     }
-
     const out: IProjectDTO = {
       id: project.id,
       name: project.name,
@@ -36,7 +33,12 @@ export class ProjectsResolver {
       tasks: project.tasks.map(y => <ITaskDTO>({ id: y.id, name: y.name, projectId: y.projectId, categoryId: y.categoryId }))
     };
     // console.log(util.inspect(out, false, null, true /* enable colors */))
-    
     return project;
+  }
+
+  @Query(returns => [Project])
+  async projects(): Promise<Project[]> {
+    // no eager loading
+    return getRepository(Project).find();
   }
 }

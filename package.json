@@ -6,12 +6,16 @@
    "author": "shortpoet <soriano.carlitos@gmail.com>",
    "license": "MIT",
    "private": false,
-   "dependencies": {},
+   "dependencies": {
+      "axios": "^0.19.2",
+      "vue": "^3.0.0-rc.5"
+   },
    "devDependencies": {
       "@types/cors": "^2.8.7",
       "@types/express": "^4.17.7",
       "@types/jest": "^26.0.8",
       "@types/node": "^8.0.29",
+      "@vue/compiler-sfc": "^3.0.0-rc.5",
       "@vue/test-utils": "^1.0.3",
       "class-validator": "^0.12.2",
       "cors": "^2.8.5",
