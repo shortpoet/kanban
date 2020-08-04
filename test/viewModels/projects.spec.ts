@@ -23,6 +23,11 @@ describe('projects.vm.ts', () => {
     const project = await createProject({ name: 'Project' });
     const category = await createCategory({ name: 'Category' }, project);
     const task = await createTask({ name: 'Task' }, project, category);
+    // console.log("category");
+    // console.log(category);
+    // console.log("task");
+    // console.log(task);
+    
     const expected: IProjectDTO[] = [
       {
         id: project.id,
@@ -31,8 +36,8 @@ describe('projects.vm.ts', () => {
           {
             id: category.id,
             name: 'Category',
-            tasks: category.tasks,
             projectId: project.id,
+            tasks: [task],
           }
         ],
         tasks: [
@@ -53,6 +58,6 @@ describe('projects.vm.ts', () => {
     // console.log(JSON.parse(JSON.stringify(expected)));
     
 
-    expect(actual).toStrictEqual(expected);
+    expect(actual).toEqual(expected);
   });
 });

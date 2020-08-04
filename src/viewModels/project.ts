@@ -1,10 +1,9 @@
 import { getRepository } from "typeorm";
 import { Project } from "../entity/Project";
-import { IProject } from "../interfaces/IProject";
 import { ICategoryDTO } from "../interfaces/ICategoryDTO";
 import { IProjectDTO } from "../interfaces/IProjectDTO";
 import { ITaskDTO } from "../interfaces/ITaskDTO";
-
+const util = require('util');
 export const projectViewModel = async (): Promise<IProjectDTO[]> => {
   // const repo = getRepository(Project).find()
   const repo = getRepository(Project)
@@ -19,7 +18,9 @@ export const projectViewModel = async (): Promise<IProjectDTO[]> => {
     categories: x.categories.map(y => <ICategoryDTO>({ id: y.id, name: y.name, projectId: y.projectId, tasks: y.tasks })),
     tasks: x.tasks.map(y => <ITaskDTO>({ id: y.id, name: y.name, projectId: y.projectId, categoryId: y.categoryId }))
   }));
-  console.log(out[0].categories);
+  // console.log("project vm");
+  // console.log(util.inspect(out, false, null, true /* enable colors */))
+  // console.log(out);
   
   return out;
 };

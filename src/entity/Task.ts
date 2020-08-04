@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
 import { Project } from "./Project";
-import { ObjectType, ID, Field } from 'type-graphql';
+import { ObjectType, ID, Field, Int } from 'type-graphql';
 import { Category } from "./Category";
 
 @ObjectType() // signifies class is part of GraphQL
@@ -13,10 +13,12 @@ export class Task {
   @Field() // default is string
   @Column()
   name: string
-
+  
+  @Field(type => Int)
   @Column({name: 'project_id'})
   projectId: number
-
+  
+  @Field(type => Int)
   @Column({ name: 'category_id' })
   categoryId: number
 

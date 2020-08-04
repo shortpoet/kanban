@@ -7,6 +7,7 @@ import { buildSchema } from "type-graphql";
 import { ProjectsResolver } from "../../src/graphQL/project.resolvers";
 import { generateSchema } from "../../src/graphQL/generateSchema";
 import { graphql } from "graphql";
+import { createTask } from "../factories/tasks";
 
 let connection: Connection;
 
@@ -24,6 +25,8 @@ describe('project.resolvers.ts', () => {
   test('project view model', async () => {
     const project = await createProject({ name: 'Project' });
     const category = await createCategory({ name: 'Category' }, project);
+    const task = await createTask({ name: 'Task' }, project, category);
+
     const expected = {
       project: {
         id: project.id.toString(),
@@ -32,6 +35,14 @@ describe('project.resolvers.ts', () => {
           {
             id: category.id.toString(),
             name: 'Category'
+          }
+        ],
+        tasks: [
+          {
+            id: task.id.toString(),
+            name: 'Task',
+            projectId: project.id,
+            categoryId: category.id
           }
         ]
       }
@@ -51,12 +62,18 @@ describe('project.resolvers.ts', () => {
               name
             }
             tasks{
-              
+              id
+              name
+              categoryId
+              projectId
             }
           }
         }
       `
     });
+    console.log((JSON.stringify(actual.data)));
+    console.log((JSON.stringify(expected)));
+
     expect(actual.data).toEqual(expected);
   });
 });

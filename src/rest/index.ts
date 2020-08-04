@@ -11,7 +11,6 @@ import { projects } from './projects';
   // }
   const app = express();
   app.use('/projects', projects);
-  console.log(process.env.DOCKER);
   
   process.env.DOCKER == '1'
     ? await app.listen(5000, '0.0.0.0')
