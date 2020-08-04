@@ -136,6 +136,8 @@ CREATE DATABASE kanban
 
 ## postgres commands
 
+! make sure to end all commands with semi-colon !
+
 show all tables
 
 ```postgresql

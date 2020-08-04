@@ -14,7 +14,9 @@ export class Project {
   name: string
   
   @Field(type => [Category]) // != Category[]
-  @OneToMany(type => Category, category => category.project)
+  @OneToMany(type => Category, category => category.project, {
+    eager: true
+  })
   
   // one option to load related entites
   // for more fine-grained control declare in viewmodel  

@@ -4,11 +4,11 @@ import { projects } from './projects';
 
 (async () => {
   const connection = await createConnection();
-  console.log(`name ${connection.name}`);
-  for (let key in connection.options) {
-    console.log(`key: ${key}, value: ${connection.options[key]}`);
+  // console.log(`name ${connection.name}`);
+  // for (let key in connection.options) {
+  //   console.log(`key: ${key}, value: ${connection.options[key]}`);
     
-  }
+  // }
   const app = express();
   app.use('/projects', projects);
   console.log(process.env.DOCKER);
