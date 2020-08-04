@@ -14,8 +14,14 @@ export class ProjectsResolver {
   @Query(returns => Project) // more than one type of query can be run (this one is akin to get); eg. mutation (patch, post)
   async project(@Arg('id') id: number, @Info() info: GraphQLResolveInfo): Promise<Project> {
     // console.log(info.fieldNodes[0].selectionSet.selections);
-    
-    const project = await getRepository(Project).findOne(id);
+    // https://github.com/typeorm/typeorm/blob/master/docs/select-query-builder.md#getting-values-using-querybuilder
+    const project = await getRepository(Project)
+      .createQueryBuilder('project')
+      .innerJoinAndSelect('project.tasks', 'tasks')
+      .innerJoinAndSelect('project.categories', 'categories')
+      .innerJoinAndSelect('categories.tasks', 'categorytasks')
+      .where('project.id = :id', { id: id })
+      .getOne();
     console.log(project);
     
 
