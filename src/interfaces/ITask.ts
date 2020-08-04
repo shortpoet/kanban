@@ -7,5 +7,5 @@ export interface ITask {
   projectId: number;
   categoryId: number;
   project: IProject;
-  category: ICategory;
+  categories: ICategory[];
 }

@@ -24,8 +24,8 @@ export class Category implements ICategory {
   @JoinColumn({ name: 'project_id' })
   project: Project
 
-  @Field(type => [Task])
-  @OneToMany(type => Task, task => task.category)
+  @Field(type => [Category])
+  @OneToMany(type => Task, task => task.categories)
   tasks: Task[]
 
 }

@@ -33,5 +33,5 @@ export class Task implements ITask {
   @ManyToOne(type => Category, category => category.tasks, {
     eager: true
   })
-  category: Category
+  categories: Category[]
 }

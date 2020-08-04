@@ -18,6 +18,7 @@ export class ProjectsResolver {
     const project = await getRepository(Project)
       .createQueryBuilder('project')
       .innerJoinAndSelect('project.tasks', 'tasks')
+      .innerJoinAndSelect('tasks.categories', 'taskcategories')
       .innerJoinAndSelect('project.categories', 'categories')
       .innerJoinAndSelect('categories.tasks', 'categorytasks')
       .where('project.id = :id', { id: id })
@@ -32,7 +33,7 @@ export class ProjectsResolver {
       categories: project.categories.map(y => <ICategoryDTO>({ id: y.id, name: y.name, projectId: y.projectId, tasks: y.tasks })),
       tasks: project.tasks.map(y => <ITaskDTO>({ id: y.id, name: y.name, projectId: y.projectId, categoryId: y.categoryId }))
     };
-    // console.log(util.inspect(out, false, null, true /* enable colors */))
+    console.log(util.inspect(out, false, null, true /* enable colors */))
     return project;
   }
 

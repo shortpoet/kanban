@@ -1,7 +1,9 @@
 <template>
   <!-- <select name="projects" id="project-select"> -->
-  <select>
-    <option v-for="project in projects" :key="project.id">
+  <select @change="onChange" :value="modelValue">
+    <option :value="null">Select a project</option>
+    <!-- without binding to :value="project.id" it defaults to name -->
+    <option v-for="project in projects" :key="project.id" :value="project.id">
       {{ project.name }}
     </option>
   </select>
@@ -16,9 +18,14 @@ export default defineComponent({
     projects: {
       type: Array as () => ISelectProject[],
     },
+    modelValue: {
+      type: String,
+    },
   },
-  setup() {
-    return {};
+  setup(props, ctx) {
+    return {
+      onChange: (e) => ctx.emit("update:modelValue", e.target.value),
+    };
   },
 });
 </script>
