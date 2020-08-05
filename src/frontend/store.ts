@@ -68,7 +68,7 @@ class Store {
         }
       `
       const json: { data: { project: IFetchProject } } = await graphFetch(url, query);
-      console.log(json);
+      // console.log(json);
       this.state.currentProject = {
         id: json.data.project.id,
         name: json.data.project.name,
@@ -80,7 +80,7 @@ class Store {
           }
         }, {})
       };
-      console.log(this.state.currentProject);
+      // console.log(this.state.currentProject);
 
     } catch (error) {
       console.log(`Error when fetching: ${error}`);

@@ -1,17 +1,22 @@
 <template>
   <div class="category">
     {{ category.name }}
+    <div v-for="task in tasks" :key="task.id">{{ task.name }}</div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import { ICategory } from "../interfaces/ICategory";
+import { ITask } from "../interfaces/ITask";
 
 export default defineComponent({
   props: {
     category: {
       type: Object as () => ICategory,
+    },
+    task: {
+      type: Array as () => ITask[],
     },
   },
   setup() {

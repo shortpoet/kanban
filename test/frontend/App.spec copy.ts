@@ -3,7 +3,7 @@ import App from '../../src/frontend/App.vue';
 
 // isometric-fetch library is an option that would give provide fetch for both browser and node
 
-const mockProjectsArrayResponse = {
+const mockProjectResponse = {
   projects: [
     {
       id: '1',
@@ -11,46 +11,57 @@ const mockProjectsArrayResponse = {
     }
   ]
 }
-const mockProjectResponse = {
+const mockProjectsResponse = {
   project: {
     id: '1',
     name: 'Project',
-    categories: [{
-      id: '1',
-      name: 'My Category'
-    }],
+    categories: [
+      {
+        id: '1',
+        name: 'My Category'
+      }
+    ],
     tasks: []
   }
 }
 
 let mockResponse;
+// global['fetch'] = jest.fn(() =>
+//   Promise.resolve({
+//     json: () => Promise.resolve({ rates: { CAD: 1.42 } }),
+//   })
+// );
+
+// beforeEach(() => {
+//   fetch.mockClear();
+// });
 
 beforeAll(() => {
   // if DOM = window
   // if NODE = process
-  // global['fetch'] = jest.fn((url: string) => ({
-  //   json: () => ({
-  //     data: mockResponse
-  //   })
-  // }))
-  global['fetch'] = (url: string) => ({
+  global['fetch'] = jest.fn((url: string) => ({
     json: () => ({
       data: mockResponse
     })
-  })
+  }))
 })
 
 
 describe('App.vue', () => {
   test('display', async () => {
-
-    mockResponse = mockProjectsArrayResponse;
+    mockResponse = mockProjectsResponse;
     const wrapper = mount(App);
     await flushPromises();
 
+    console.log(wrapper.html());
     mockResponse = mockProjectResponse;
-    wrapper.find('select').setValue('1');
+    const sel = wrapper.find('select');
+    console.log(sel.html());
+
+    sel.setValue('1');
     await flushPromises();
+    console.log(wrapper.html());
+
 
     expect(wrapper.html()).toContain('My Category');
   })
