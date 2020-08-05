@@ -1,0 +1,43 @@
+{
+   "name": "kanban",
+   "version": "1.0.0",
+   "main": "index.js",
+   "repository": "https://github.com/shortpoet/kanban",
+   "author": "shortpoet <soriano.carlitos@gmail.com>",
+   "license": "MIT",
+   "private": false,
+   "dependencies": {},
+   "devDependencies": {
+      "@types/cors": "^2.8.7",
+      "@types/express": "^4.17.7",
+      "@types/jest": "^26.0.8",
+      "@types/node": "^8.0.29",
+      "@vue/test-utils": "^2.0.0-beta.1",
+      "class-validator": "^0.12.2",
+      "cors": "^2.8.5",
+      "express": "^4.17.1",
+      "express-graphql": "^0.11.0",
+      "graphql": "^15.3.0",
+      "jest": "^26.2.2",
+      "pg": "^8.3.0",
+      "reflect-metadata": "^0.1.13",
+      "ts-jest": "^26.1.4",
+      "ts-node": "3.3.0",
+      "ts-node-dev": "^1.0.0-pre.56",
+      "type-graphql": "^1.0.0-rc.3",
+      "@typescript-eslint/eslint-plugin": "^2.33.0",
+      "@typescript-eslint/parser": "^2.33.0",
+      "eslint": "^6.7.2",
+      "typeorm": "^0.2.25",
+      "typescript": "^3.9.7",
+      "vue-jest": "^5.0.0-alpha.1"
+   },
+   "scripts": {
+      "start:rest": "ts-node rest/index.ts",
+      "start:graph": "ts-node graphql/index.ts",
+      "dev:rest": "ts-node-dev rest/index.ts",
+      "dev:graph": "ts-node-dev graphql/index.ts",
+      "test": "jest test",
+      "docker": "ts-node-dev graphql/index.ts"
+   }
+}
