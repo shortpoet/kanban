@@ -114,20 +114,57 @@ CREATE DATABASE kanban
     CONNECTION LIMIT = -1;
 ```
 
-<https://marcyes.com/2016/0922-messing-with-postgresql-users-and-permissions/>
-<https://kb.objectrocket.com/postgresql/how-to-run-an-sql-file-in-postgres-846>
-<https://www.postgresqltutorial.com/postgresql-drop-database/>
-<https://stackoverflow.com/questions/46773363/granted-all-privileges-on-my-postgres-table-but-still-am-getting-a-permission>
-<https://serverfault.com/questions/198002/postgresql-what-does-grant-all-privileges-on-database-do> (sequences and tables)
-<https://notathoughtexperiment.me/blog/how-to-connect-to-postgres-in-docker-container/>
-<https://hub.docker.com/_/postgres>
-<https://docs.docker.com/engine/examples/postgresql_service/>
-<https://towardsdatascience.com/local-development-set-up-of-postgresql-with-docker-c022632f13ea>
-<https://hackernoon.com/dont-install-postgres-docker-pull-postgres-bee20e200198>
-<https://nodejs.org/en/docs/guides/nodejs-docker-webapp/>
-<http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/>
+- <https://github.com/lmiller1990/graphql-rest-vue>
 
-- user that creates has privileges
+- postgres
+
+  - user that creates has privileges
+  - <https://marcyes.com/2016/0922-messing-with-postgresql-users-and-permissions/>
+  - <https://kb.objectrocket.com/postgresql/how-to-run-an-sql-file-in-postgres-846>
+  - <https://www.postgresqltutorial.com/postgresql-drop-database/>
+  - <https://stackoverflow.com/questions/46773363/granted-all-privileges-on-my-postgres-table-but-still-am-getting-a-permission>
+  - <https://serverfault.com/questions/198002/postgresql-what-does-grant-all-privileges-on-database-do> (sequences and tables)
+  - <https://stackoverflow.com/questions/41637505/how-to-persist-data-in-a-dockerized-postgres-database-using-volumes>
+  - <https://notathoughtexperiment.me/blog/how-to-connect-to-postgres-in-docker-container/>
+  - <https://gist.github.com/onjin/2dd3cc52ef79069de1faa2dfd456c945>
+
+- docker
+
+  - <https://hub.docker.com/_/postgres>
+  - <https://docs.docker.com/engine/examples/postgresql_service/>
+  - <https://towardsdatascience.com/local-development-set-up-of-postgresql-with-docker-c022632f13ea>
+  - <https://hackernoon.com/dont-install-postgres-docker-pull-postgres-bee20e200198>
+  - <https://nodejs.org/en/docs/guides/nodejs-docker-webapp/>
+  - <http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/>
+  - <https://dev.to/rangle/docker-for-frontend-devs-custom-docker-images-for-development-1afc>
+  - <https://medium.com/@kale.miller96/how-to-mount-your-current-working-directory-to-your-docker-container-in-windows-74e47fa104d7>
+  - <https://www.jonathan-petitcolas.com/2017/01/26/yarn-npm-install-within-docker-container.html>
+  - <https://mherman.org/blog/dockerizing-a-vue-app/>
+  - <https://medium.com/better-programming/docker-for-front-end-developers-c758a44e622f>
+  - <http://blog.code4hire.com/2018/06/define-named-volume-with-host-mount-in-the-docker-compose-file/>
+  - <https://www.freecodecamp.org/news/a-beginners-guide-to-docker-how-to-create-a-client-server-side-with-docker-compose-12c8cf0ae0aa/>
+  - <https://stackoverflow.com/questions/30063907/using-docker-compose-how-to-execute-multiple-commands>
+  - <https://blog.atulr.com/docker-local-environment/#:~:text=%F0%9F%95%B6%20Docker%20based%20local%20development,all%20out%20as%20one%20package.>
+  - <https://www.smashingmagazine.com/2016/04/stop-installing-your-webdev-environment-locally-with-docker/>
+  - <https://auth0.com/blog/use-docker-to-create-a-node-development-environment/>
+  - <https://medium.com/rate-engineering/using-docker-containers-as-development-machines-4de8199fc662>
+  - <https://www.docker.com/blog/how-to-setup-your-local-node-js-development-environment-using-docker/>
+  - <https://dev.to/enkaypeter/how-to-deploy-a-vue-application-on-cloud-run-3efl>
+  - <https://www.openshift.com/blog/deploy-vuejs-applications-on-openshift>
+  - <https://blog.logrocket.com/how-to-auto-deploy-a-vue-application-using-gitlab-ci-cd-on-ubuntu/>
+  - <https://www.freecodecamp.org/news/how-you-can-do-continuous-delivery-with-vue-docker-and-azure-2f1e31fff832/>
+  - <https://jonathanmh.com/deploying-a-vue-js-single-page-app-including-router-with-docker/>
+  - <https://developer.ibm.com/recipes/tutorials/a-best-practice-in-dockerizing-vue-js-application/>
+  - <https://medium.com/dirtyjs/how-to-deploy-vue-js-app-in-one-line-with-docker-digital-ocean-2338f03d406a>
+  - <https://devspace.cloud/blog/2019/09/30/deploy-vue-js-to-kubernetes>
+  - <https://cli.vuejs.org/guide/deployment.html#docker-nginx>
+
+  - typeorm
+    - <https://typeorm.io/#/>
+    - <https://github.com/typeorm/typeorm/blob/master/docs/select-query-builder.md#getting-values-using-querybuilder>
+    - <https://github.com/vitejs/vite>
+    - <https://typegraphql.com/docs>
+    - <https://www.apollographql.com/docs/tutorial/resolvers/>
 
 ```psql
 \c kanban

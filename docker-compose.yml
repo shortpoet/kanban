@@ -1,7 +1,7 @@
-version: '3.4'
+version: "3.4"
 
 services:
-  kanban:
+  kanban.client:
     image: shortpoet/kanban
     depends_on:
       - db
@@ -12,21 +12,40 @@ services:
     stdin_open: true
     working_dir: /usr/src/app
     env_file:
-      - 'docker.env'
+      - "docker.env"
     environment:
       NODE_ENV: production
     ports:
-      # - 3000
-      - 4000:4000
-      - 5000:5000
-      # - 8080
+      - 3000:3000
     volumes:
       - .:/usr/src/app
     networks:
       - kanbannet
-    command: yarn start:rest
+    command: yarn vite
+
+  kanban.server:
+    image: shortpoet/kanban
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    tty: true
+    stdin_open: true
+    working_dir: /usr/src/app
+    env_file:
+      - "docker.env"
+    environment:
+      NODE_ENV: production
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - kanbannet
+    command: yarn start:graph
     entrypoint: ./docker-entrypoint.sh
-  
+
   # https://gist.github.com/onjin/2dd3cc52ef79069de1faa2dfd456c945
   db:
     image: postgres:12
@@ -37,7 +56,7 @@ services:
       - ./sql/create_schema.sql:/docker-entrypoint-initdb.d/create_schema.sql:ro
       - ./postgres-data:/var/lib/postgresql/data
     env_file:
-      - 'docker.env'
+      - "docker.env"
     ports:
       - 5432:5432
     networks:

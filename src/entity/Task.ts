@@ -1,8 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
 import { Project } from "./Project";
 import { ObjectType, ID, Field, Int } from 'type-graphql';
 import { Category } from "./Category";
 import { ITask } from "../interfaces/ITask";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
 
 @ObjectType() // signifies class is part of GraphQL
 @Entity({ name: 'tasks' })

@@ -10,8 +10,8 @@ import cors = require('cors');
 (async () => {
   const connection = await createConnection();
   const schema = await generateSchema(ProjectsResolver);
-  // console.log(`name ${connection.name}`);
-  // console.log(`options ${connection.options}`);
+  console.log(`name ${connection.name}`);
+  console.log(`options ${connection.options}`);
   const app = express();
   app.use(cors());
   app.use('/graphql', graphqlHTTP({
