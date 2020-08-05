@@ -7,7 +7,7 @@ services:
       - db
     build:
       context: .
-      dockerfile: docker/Dockerfile
+      dockerfile: docker/Dockerfile.alpine
     tty: true
     stdin_open: true
     working_dir: /usr/src/app
@@ -17,34 +17,35 @@ services:
       NODE_ENV: production
     ports:
       - 3000:3000
-    volumes:
-      - .:/usr/src/app
-    networks:
-      - kanbannet
-    command: yarn vite
-
-  kanban.server:
-    image: shortpoet/kanban
-    depends_on:
-      - db
-    build:
-      context: .
-      dockerfile: docker/Dockerfile
-    tty: true
-    stdin_open: true
-    working_dir: /usr/src/app
-    env_file:
-      - "docker.env"
-    environment:
-      NODE_ENV: production
-    ports:
       - 5000:5000
     volumes:
       - .:/usr/src/app
     networks:
       - kanbannet
-    command: yarn start:graph
+    command: yarn dev:rest
     entrypoint: ./docker-entrypoint.sh
+
+  # kanban.server:
+  #   image: shortpoet/kanban
+  #   depends_on:
+  #     - db
+  #   build:
+  #     context: .
+  #     dockerfile: docker/Dockerfile
+  #   tty: true
+  #   stdin_open: true
+  #   working_dir: /usr/src/app
+  #   env_file:
+  #     - "docker.env"
+  #   environment:
+  #     NODE_ENV: production
+  #   ports:
+  #     - 5000:5000
+  #   volumes:
+  #     - .:/usr/src/app
+  #   networks:
+  #     - kanbannet
+  #   command: yarn start:graph
 
   # https://gist.github.com/onjin/2dd3cc52ef79069de1faa2dfd456c945
   db:
