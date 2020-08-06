@@ -2,11 +2,11 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "./build",
+    // "outDir": "./build",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "isolatedModules": false,
-    // "strict": true,
+    "strict": false,
     "jsx": "preserve",
     "importHelpers": true,
     "esModuleInterop": true,
@@ -27,6 +27,7 @@
     "tests/**/*.ts",
     "tests/**/*.tsx",
     "shims-vue.d.ts"
+    // "shims-tsx.d.ts"
   ],
   "exclude": ["node_modules"]
 }

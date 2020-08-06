@@ -8,10 +8,10 @@ module.exports = {
       },
     },
   },
-  pages: {
-    app: {
-      entry: 'src/main.ts',
-      template: 'public/index.html',
-    },
-  },
+  // pages: {
+  //   app: {
+  //     entry: 'H:\\source\\lrn\\lachlan-miller\\kanban\\client\\src\\main.ts',
+  //     template: 'H:\\source\\lrn\\lachlan-miller\\kanban\\client\\src\\public\\index.html',
+  //   },
+  // },
 };
