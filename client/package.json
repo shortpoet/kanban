@@ -1,5 +1,5 @@
 {
-   "name": "kanban",
+   "name": "kanban.client",
    "version": "1.0.0",
    "main": "index.js",
    "repository": "https://github.com/shortpoet/kanban",
@@ -8,20 +8,21 @@
    "private": false,
    "dependencies": {
       "axios": "^0.19.2",
-      "vue": "^3.0.0-rc.5",
-      "core-js": "^3.6.5"
+      "core-js": "^3.6.5",
+      "vue": "^3.0.0-rc.5"
    },
    "devDependencies": {
       "@types/jest": "^26.0.8",
-      "@types/node": "^8.0.29",
-      "@vue/test-utils": "^2.0.0-beta.1",
-      "class-validator": "^0.12.2",
-      "jest": "^26.2.2",
+      "@types/node": "^14.0.27",
       "@vue/cli-plugin-babel": "~4.5.0",
       "@vue/cli-plugin-typescript": "~4.5.0",
       "@vue/cli-plugin-unit-jest": "~4.5.0",
       "@vue/cli-service": "~4.5.0",
       "@vue/compiler-sfc": "^3.0.0-0",
+      "@vue/test-utils": "^2.0.0-beta.1",
+      "class-validator": "^0.12.2",
+      "jest": "^26.2.2",
+      "ts-jest": "^26.1.4",
       "typescript": "^3.9.7",
       "vite": "^1.0.0-rc.4",
       "vue-jest": "^5.0.0-alpha.1"

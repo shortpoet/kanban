@@ -4,8 +4,8 @@ import { createProject } from "../factories/projects";
 import { Category } from "../../src/entity/Category";
 import { createCategory } from "../factories/categories";
 import { buildSchema } from "type-graphql";
-import { ProjectsResolver } from "../../graphQL/project.resolvers";
-import { generateSchema } from "../../graphQL/generateSchema";
+import { ProjectsResolver } from "../../src/graphQL/project.resolvers";
+import { generateSchema } from "../../src/graphQL/generateSchema";
 import { graphql } from "graphql";
 import { createTask } from "../factories/tasks";
 
@@ -71,8 +71,8 @@ describe('project.resolvers.ts', () => {
         }
       `
     });
-    console.log((JSON.stringify(actual.data)));
-    console.log((JSON.stringify(expected)));
+    // console.log((JSON.stringify(actual.data)));
+    // console.log((JSON.stringify(expected)));
 
     expect(actual.data).toEqual(expected);
   });

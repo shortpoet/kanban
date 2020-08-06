@@ -1,5 +1,5 @@
 import { mount, flushPromises } from '@vue/test-utils';
-import App from '../../src/frontend/App.vue';
+import App from '../src/App.vue';
 
 // isometric-fetch library is an option that would give provide fetch for both browser and node
 

@@ -1,5 +1,5 @@
 {
-   "name": "kanban",
+   "name": "kanban.server",
    "version": "1.0.0",
    "main": "index.js",
    "repository": "https://github.com/shortpoet/kanban",
@@ -25,9 +25,6 @@
       "ts-node": "3.3.0",
       "ts-node-dev": "^1.0.0-pre.56",
       "type-graphql": "^1.0.0-rc.3",
-      "@typescript-eslint/eslint-plugin": "^2.33.0",
-      "@typescript-eslint/parser": "^2.33.0",
-      "eslint": "^6.7.2",
       "typeorm": "^0.2.25",
       "typescript": "^3.9.7",
       "vue-jest": "^5.0.0-alpha.1"

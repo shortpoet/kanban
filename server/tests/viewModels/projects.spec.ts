@@ -1,4 +1,4 @@
-import { projectViewModel } from "../../viewModels/project";
+import { projectViewModel } from "../../src/viewModels/project";
 import { Connection, createConnection, getRepository } from "typeorm";
 import { Project } from "../../src/entity/Project";
 import { createProject } from "../factories/projects";

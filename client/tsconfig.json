@@ -12,13 +12,21 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "types": ["webpack-env", "jest"],
+    "types": ["webpack-env", "jest", "node"],
     "paths": {
       "@/*": ["src/*"]
     },
-    "target": "esnext",
-    "module": "esnext",
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "ES2019",
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost",
+      "es5",
+      "es6"
+    ]
   },
   "include": [
     "src/**/*.ts",
