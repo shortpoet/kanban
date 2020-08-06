@@ -22,7 +22,7 @@ services:
       - /usr/src/app/node_modules
     networks:
       - kanbannet
-    command: yarn serve
+    command: yarn dev
 
   kanban.server:
     image: kanban.server:alpine
