@@ -30,15 +30,11 @@ export default defineComponent({
 
     const getTasks = (category: ICategory): ITask[] => {
       const tasks: ITask[] = [];
-      console.log(store.getState().currentProject);
-      
       for (const [id, task] of Object.entries(
         store.getState().currentProject?.tasks
       )) {
         if (task.categoryId == category.id) tasks.push(task);
       }
-      console.log(tasks);
-      
       return tasks;
     };
 

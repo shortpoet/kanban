@@ -1,7 +1,12 @@
 <template>
-  <div class="category">
+  <div
+    class="category"
+    @dragover.prevent
+    @drop.prevent="onDrop"
+    data-dropzone="true"
+  >
     {{ category.name }}
-    <div v-for="task in tasks" :key="task.id">{{ task.name }}</div>
+    <DraggableTask v-for="task in tasks" :key="task.id" :task="task" />
   </div>
 </template>
 
@@ -9,8 +14,12 @@
 import { defineComponent } from "vue";
 import { ICategory } from "./interfaces/ICategory";
 import { ITask } from "./interfaces/ITask";
+import DraggableTask from './DraggableTask.vue'
 
 export default defineComponent({
+  components: {
+    DraggableTask
+  },
   props: {
     category: {
       type: Object as () => ICategory,
@@ -19,8 +28,20 @@ export default defineComponent({
       type: Array as () => ITask[],
     },
   },
-  setup() {
-    return {};
+  setup(props) {
+    return {
+      onDrop: (e: DragEvent) => {
+        const id = e.dataTransfer.getData('text/plain');
+        // manual 'incorrect' drop method bec doesnt
+        const task = document.querySelector(`[data-taskid="${id}"]`)
+        // console.log(e.target.constructor.name);
+        // https://stackoverflow.com/a/61164277/12658653
+        const target: HTMLDivElement = e.target as HTMLDivElement
+        // this avoids stacking the tasks on one another
+        if (target.getAttribute('data-dropzone')) target.appendChild(task)
+        console.log(id);
+      }
+    };
   },
 });
 </script>
