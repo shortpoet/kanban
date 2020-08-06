@@ -2,7 +2,7 @@ version: "3.4"
 
 services:
   kanban.client:
-    image: shortpoet/kanban
+    image: kanban:alpine
     depends_on:
       - db
     build:
