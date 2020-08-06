@@ -4,7 +4,7 @@ import { Project } from "../../src/entity/Project";
 import { createProject } from "../factories/projects";
 import { createCategory } from "../factories/categories";
 import { createTask } from "../factories/tasks";
-import { IProjectDTO } from "../../../client/src/interfaces/IProjectDTO";
+import { IProjectDTO } from "../../src/interfaces/IProjectDTO";
 
 let connection: Connection;
 
