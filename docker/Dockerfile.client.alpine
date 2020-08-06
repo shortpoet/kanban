@@ -1,0 +1,21 @@
+FROM node:12.2.0-alpine
+
+WORKDIR /usr/src/app
+
+COPY client/package*.json ./
+
+RUN npm install -g --quiet --silent @vue/cli@next
+
+RUN npm install --quiet --silent
+
+ENV PATH /usr/node_modules/.bin:$PATH
+
+COPY . .
+
+EXPOSE 3000
+
+LABEL maintainer="Carlos Soriano <shortpoet@github>"
+
+CMD ["yarn", "serve"]
+
+# docker run --rm -it -v ${PWD}:/usr/src/app -v /usr/src/app/node_modules -p 3000:3000 play:alpine

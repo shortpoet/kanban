@@ -45,7 +45,7 @@ class Store {
       console.log(`Error when fetching: ${error}`);
     }
   }
-  async fetchProject(id) {
+  async fetchProject(id: string) {
     try {
       const url = 'http://localhost:4000/graphql';
       const query = `

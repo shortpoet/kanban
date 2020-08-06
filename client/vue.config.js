@@ -10,7 +10,7 @@ module.exports = {
   },
   pages: {
     app: {
-      entry: 'src/frontend/main.ts',
+      entry: 'src/main.ts',
       template: 'public/index.html',
     },
   },

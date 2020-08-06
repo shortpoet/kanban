@@ -34,10 +34,10 @@
    },
    "scripts": {
       "start:rest": "ts-node src/rest/index.ts",
-      "start:graph": "ts-node src/graphql/index.ts",
+      "start:graph": "ts-node src/graphQL/index.ts",
       "dev:rest": "ts-node-dev src/rest/index.ts",
-      "dev:graph": "ts-node-dev src/graphql/index.ts",
+      "dev:graph": "ts-node-dev src/graphQL/index.ts",
       "test": "jest test",
-      "docker": "ts-node-dev src/graphql/index.ts"
+      "docker": "ts-node-dev src/graphQL/index.ts"
    }
 }

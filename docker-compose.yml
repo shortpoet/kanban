@@ -1,37 +1,13 @@
 version: "3.4"
 
 services:
-  kanban.client:
-    image: kanban:alpine
-    depends_on:
-      - db
-    build:
-      context: .
-      dockerfile: docker/Dockerfile.alpine
-    tty: true
-    stdin_open: true
-    working_dir: /usr/src/app
-    env_file:
-      - "docker.env"
-    environment:
-      NODE_ENV: production
-    ports:
-      - 3000:3000
-      - 5000:5000
-    volumes:
-      - .:/usr/src/app
-    networks:
-      - kanbannet
-    command: yarn dev:rest
-    entrypoint: ./docker-entrypoint.sh
-
-  # kanban.server:
-  #   image: shortpoet/kanban
+  # kanban.client:
+  #   image: kanban.client:alpine
   #   depends_on:
   #     - db
   #   build:
   #     context: .
-  #     dockerfile: docker/Dockerfile
+  #     dockerfile: docker/Dockerfile.client.alpine
   #   tty: true
   #   stdin_open: true
   #   working_dir: /usr/src/app
@@ -40,12 +16,37 @@ services:
   #   environment:
   #     NODE_ENV: production
   #   ports:
-  #     - 5000:5000
+  #     - 3000:3000
   #   volumes:
-  #     - .:/usr/src/app
+  #     - ./client:/usr/src/app
+  #     - /usr/src/app/node_modules
   #   networks:
   #     - kanbannet
-  #   command: yarn start:graph
+  #   command: yarn serve
+
+  kanban.server:
+    image: kanban.server:alpine
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.server.alpine
+    tty: true
+    stdin_open: true
+    working_dir: /usr/src/app
+    env_file:
+      - "docker.env"
+    environment:
+      NODE_ENV: production
+    ports:
+      - 5000:5000
+    volumes:
+      - ./server:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - kanbannet
+    command: yarn start:graph
+    entrypoint: ./docker-entrypoint.sh
 
   # https://gist.github.com/onjin/2dd3cc52ef79069de1faa2dfd456c945
   db:

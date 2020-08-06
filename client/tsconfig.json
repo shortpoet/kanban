@@ -5,8 +5,8 @@
     "outDir": "./build",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "isolatedModules": true,
-    "strict": true,
+    "isolatedModules": false,
+    // "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
     "esModuleInterop": true,
@@ -25,7 +25,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "shims-vue.d.ts"
   ],
   "exclude": ["node_modules"]
 }
