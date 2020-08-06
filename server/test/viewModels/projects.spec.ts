@@ -1,6 +1,6 @@
 import { projectViewModel } from "../../viewModels/project";
 import { Connection, createConnection, getRepository } from "typeorm";
-import { Project } from "../../entity/Project";
+import { Project } from "../../src/entity/Project";
 import { createProject } from "../factories/projects";
 import { createCategory } from "../factories/categories";
 import { createTask } from "../factories/tasks";

@@ -1,7 +1,7 @@
 import { Connection, createConnection, getRepository } from "typeorm";
-import { Project } from "../../entity/Project";
+import { Project } from "../../src/entity/Project";
 import { createProject } from "../factories/projects";
-import { Category } from "../../entity/Category";
+import { Category } from "../../src/entity/Category";
 import { createCategory } from "../factories/categories";
 import { buildSchema } from "type-graphql";
 import { ProjectsResolver } from "../../graphQL/project.resolvers";

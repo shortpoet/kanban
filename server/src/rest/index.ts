@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { createConnection } from '../test/factories/node_modules/typeorm';
+import { createConnection } from 'typeorm';
 import { projects } from './projects';
 
 (async () => {

@@ -33,11 +33,11 @@
       "vue-jest": "^5.0.0-alpha.1"
    },
    "scripts": {
-      "start:rest": "ts-node rest/index.ts",
-      "start:graph": "ts-node graphql/index.ts",
-      "dev:rest": "ts-node-dev rest/index.ts",
-      "dev:graph": "ts-node-dev graphql/index.ts",
+      "start:rest": "ts-node src/rest/index.ts",
+      "start:graph": "ts-node src/graphql/index.ts",
+      "dev:rest": "ts-node-dev src/rest/index.ts",
+      "dev:graph": "ts-node-dev src/graphql/index.ts",
       "test": "jest test",
-      "docker": "ts-node-dev graphql/index.ts"
+      "docker": "ts-node-dev src/graphql/index.ts"
    }
 }

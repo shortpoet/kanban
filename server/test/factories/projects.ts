@@ -1,4 +1,4 @@
-import { Project } from "../../entity/Project";
+import { Project } from "../../src/entity/Project";
 import { getRepository, DeepPartial } from "typeorm";
 
 export const createProject = (attrs: DeepPartial<Project>): Promise<Project> => {

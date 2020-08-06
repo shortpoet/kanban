@@ -1,7 +1,7 @@
 import { Project } from "./Project";
 import { ObjectType, ID, Field, Int } from 'type-graphql';
 import { Task } from "./Task";
-import { ICategory } from "../../client/src/interfaces/ICategory";
+import { ICategory } from "../interfaces/ICategory";
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToMany } from "typeorm";
 
 @ObjectType() // signifies class is part of GraphQL

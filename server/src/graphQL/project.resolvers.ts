@@ -4,9 +4,9 @@ import { getRepository } from 'typeorm';
 import { RequestInfo } from 'express-graphql';
 import { MetadataStorage } from 'class-validator';
 import { GraphQLResolveInfo } from 'graphql';
-import { IProjectDTO } from '../../client/src/interfaces/IProjectDTO';
-import { ICategoryDTO } from '../../client/src/interfaces/ICategoryDTO';
-import { ITaskDTO } from '../../client/src/interfaces/ITaskDTO';
+import { IProjectDTO } from '../interfaces/IProjectDTO';
+import { ICategoryDTO } from '../interfaces/ICategoryDTO';
+import { ITaskDTO } from '../interfaces/ITaskDTO';
 const util = require('util');
 @Resolver(of => Project)
 export class ProjectsResolver {
