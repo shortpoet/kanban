@@ -15,6 +15,7 @@ import { defineComponent } from "vue";
 import { ICategory } from "./interfaces/ICategory";
 import { ITask } from "./interfaces/ITask";
 import DraggableTask from './DraggableTask.vue'
+import { store } from "./store";
 
 export default defineComponent({
   components: {
@@ -32,13 +33,16 @@ export default defineComponent({
     return {
       onDrop: (e: DragEvent) => {
         const id = e.dataTransfer.getData('text/plain');
-        // manual 'incorrect' drop method bec doesnt
         const task = document.querySelector(`[data-taskid="${id}"]`)
         // console.log(e.target.constructor.name);
         // https://stackoverflow.com/a/61164277/12658653
         const target: HTMLDivElement = e.target as HTMLDivElement
         // this avoids stacking the tasks on one another
-        if (target.getAttribute('data-dropzone')) target.appendChild(task)
+        if (target.getAttribute('data-dropzone')) {
+          // manual 'incorrect' drop method bec doesn't update db
+          // target.appendChild(task)
+          store.updateTask(id, props.category.id.toString());
+        }
         console.log(id);
       }
     };

@@ -1,10 +1,10 @@
-import { buildSchema } from "type-graphql";
+import { buildSchema, BuildSchemaOptions } from "type-graphql";
 import { GraphQLSchema } from "graphql";
 
-export async function generateSchema(resolvers): Promise<GraphQLSchema> {
+export async function generateSchema(...resolvers: BuildSchemaOptions["resolvers"]): Promise<GraphQLSchema> {
   try {
     const schema = await buildSchema({
-      resolvers: [resolvers]
+      resolvers: resolvers
     })
 
     return schema

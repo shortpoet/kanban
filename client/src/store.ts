@@ -3,6 +3,7 @@ import { ISelectProject } from "./interfaces/ISelectProject";
 import { graphFetch } from './ajax';
 import { ICurrentProject } from './interfaces/ICurrentProject';
 import { IFetchProject } from './interfaces/IFetchProject';
+import { ITask } from './interfaces/ITask';
 
 interface State {
   projects: ISelectProject[];
@@ -84,6 +85,26 @@ class Store {
         }, {})
       };
       // console.log(this.state.currentProject);
+
+    } catch (error) {
+      console.log(`Error when fetching: ${error}`);
+    }
+  }
+  async updateTask(id: string, categoryId: string) {
+    try {
+      const url = 'http://localhost:4000/graphql';
+      // updateTask matches resolver function name and arg task matches arg task in resolver
+      const query = `
+        mutation {
+          updateTask(task: { id: ${id}, categoryId: ${categoryId} }) {
+            category {
+              id
+            }
+          }
+        }
+      `
+      const json: { data: { updateTask: ITask } } = await graphFetch(url, query);
+      this.state.currentProject.tasks[id].categoryId = json.data.updateTask.categoryId
 
     } catch (error) {
       console.log(`Error when fetching: ${error}`);
