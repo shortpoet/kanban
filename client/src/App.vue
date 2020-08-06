@@ -33,7 +33,9 @@ export default defineComponent({
       for (const [id, task] of Object.entries(
         store.getState().currentProject?.tasks
       )) {
-        if (task.categoryId == category.id) tasks.push(task);
+        if (task.categoryId == category.id) {
+          tasks.push(task)
+        };
       }
       return tasks;
     };

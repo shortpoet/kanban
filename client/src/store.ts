@@ -104,8 +104,7 @@ class Store {
         }
       `
       const json: { data: { updateTask: ITask } } = await graphFetch(url, query);
-      this.state.currentProject.tasks[id].categoryId = json.data.updateTask.categoryId
-
+      this.state.currentProject.tasks[id].categoryId = json.data.updateTask.categoryId;
     } catch (error) {
       console.log(`Error when fetching: ${error}`);
     }
