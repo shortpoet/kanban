@@ -2,15 +2,15 @@ FROM node:12.2.0-alpine
 
 WORKDIR /usr/src/app
 
-COPY client/package*.json ./
-
 RUN npm install -g --quiet --silent @vue/cli@next
+
+COPY client/package*.json ./
 
 RUN npm install --quiet --silent
 
-ENV PATH /usr/node_modules/.bin:$PATH
+COPY ./client .
 
-COPY . .
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 EXPOSE 3000
 
