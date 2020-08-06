@@ -1,0 +1,48 @@
+{
+   "name": "kanban",
+   "version": "1.0.0",
+   "main": "index.js",
+   "repository": "https://github.com/shortpoet/kanban",
+   "author": "shortpoet <soriano.carlitos@gmail.com>",
+   "license": "MIT",
+   "private": false,
+   "dependencies": {
+      "axios": "^0.19.2",
+      "vue": "^3.0.0-rc.5",
+      "core-js": "^3.6.5"
+   },
+   "devDependencies": {
+      "@types/jest": "^26.0.8",
+      "@types/node": "^8.0.29",
+      "@vue/test-utils": "^2.0.0-beta.1",
+      "class-validator": "^0.12.2",
+      "jest": "^26.2.2",
+      "@typescript-eslint/eslint-plugin": "^2.33.0",
+      "@typescript-eslint/parser": "^2.33.0",
+      "@vue/cli-plugin-babel": "~4.5.0",
+      "@vue/cli-plugin-eslint": "~4.5.0",
+      "@vue/cli-plugin-router": "~4.5.0",
+      "@vue/cli-plugin-typescript": "~4.5.0",
+      "@vue/cli-plugin-unit-jest": "~4.5.0",
+      "@vue/cli-plugin-vuex": "~4.5.0",
+      "@vue/cli-service": "~4.5.0",
+      "@vue/compiler-sfc": "^3.0.0-0",
+      "@vue/eslint-config-typescript": "^5.0.2",
+      "eslint": "^6.7.2",
+      "eslint-plugin-vue": "^7.0.0-0",
+      "sass": "^1.26.5",
+      "sass-loader": "^8.0.2",
+      "typescript": "^3.9.7",
+      "vite": "^1.0.0-rc.4",
+      "vue-jest": "^5.0.0-alpha.1"
+   },
+   "scripts": {
+      "test": "jest test",
+      "serve": "vue-cli-service serve",
+      "build": "vue-cli-service build",
+      "test:unit": "vue-cli-service test:unit",
+      "lint": "vue-cli-service lint",
+      "dev": "yarn vite",
+      "docker": "vue-cli-service serve"
+   }
+}
