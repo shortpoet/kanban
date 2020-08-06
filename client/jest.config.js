@@ -7,7 +7,17 @@ module.exports = {
   // https://medium.com/@kevinsimper/how-to-disable-jsdom-in-jest-make-jest-run-twice-as-fast-a01193f23405
   roots: ["./tests"],
   transform: {
-    "^.+\\.vue$": "vue-jest",
+    // process TypeScript files
+    "^.+\\.ts$": "ts-jest",
+    // process *.vue files with vue-jest
+    ".*\\.(vue)$": "vue-jest"
   },
   moduleFileExtensions: ["vue", "js", "json", "jsx", "ts", "tsx", "node"],
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/src/$1"
+  },
+  // serializer for snapshots
+  // snapshotSerializers: [
+  //   "jest-serializer-vue"
+  // ]
 };

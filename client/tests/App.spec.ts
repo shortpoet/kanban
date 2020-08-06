@@ -33,7 +33,8 @@ beforeAll(() => {
   //     data: mockResponse
   //   })
   // }))
-  global['fetch'] = (url: string) => ({
+  // https://stackoverflow.com/questions/49027145/mock-a-global-object-with-jest-and-typescript
+  (global['fetch'] as any) = (url: string) => ({
     json: () => ({
       data: mockResponse
     })
