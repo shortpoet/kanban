@@ -1,0 +1,5 @@
+yarn run v1.22.4
+$ ts-node-dev src/graphQL/index.ts
+Using ts-node version 8.10.2, typescript version 3.9.7
+name default
+options [object Object]

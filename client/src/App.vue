@@ -15,8 +15,8 @@ import { defineComponent, ref, computed, watch } from "vue";
 import { store } from "./store";
 import SelectProject from "./SelectProject.vue";
 import Category from "./Category.vue";
-import { ICategory } from "../interfaces/ICategory";
-import { ITask } from "../interfaces/ITask";
+import { ICategory } from "./interfaces/ICategory";
+import { ITask } from "./interfaces/ITask";
 
 export default defineComponent({
   components: { SelectProject, Category },
@@ -30,11 +30,15 @@ export default defineComponent({
 
     const getTasks = (category: ICategory): ITask[] => {
       const tasks: ITask[] = [];
+      console.log(store.getState().currentProject);
+      
       for (const [id, task] of Object.entries(
         store.getState().currentProject?.tasks
       )) {
         if (task.categoryId == category.id) tasks.push(task);
       }
+      console.log(tasks);
+      
       return tasks;
     };
 

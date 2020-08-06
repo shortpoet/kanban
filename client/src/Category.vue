@@ -7,15 +7,15 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { ICategory } from "../interfaces/ICategory";
-import { ITask } from "../interfaces/ITask";
+import { ICategory } from "./interfaces/ICategory";
+import { ITask } from "./interfaces/ITask";
 
 export default defineComponent({
   props: {
     category: {
       type: Object as () => ICategory,
     },
-    task: {
+    tasks: {
       type: Array as () => ITask[],
     },
   },

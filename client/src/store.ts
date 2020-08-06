@@ -76,7 +76,10 @@ class Store {
         tasks: json.data.project.tasks.reduce((acc, task) => {
           return {
             ...acc,
-            [task.id]: task
+            [task.id]: {
+              ...task,
+              categoryId: task.categories.id
+            }
           }
         }, {})
       };

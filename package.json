@@ -1,0 +1,20 @@
+{
+  "name": "kanban.root",
+  "version": "1.0.0",
+  "description": "This is an extension of a kanban board featured in [some screencasts](https://vuejs-course.com/screencasts) by [@Lachlan19900](https://twitter.com/Lachlan19900).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node-dev src/graphQL/index.ts && vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shortpoet/kanban.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shortpoet/kanban/issues"
+  },
+  "homepage": "https://github.com/shortpoet/kanban#readme"
+}
