@@ -16,6 +16,6 @@ EXPOSE 3000
 
 LABEL maintainer="Carlos Soriano <shortpoet@github>"
 
-CMD ["yarn", "serve"]
+# CMD ["yarn", "serve"]
 
-# docker run --rm -it -v ${PWD}:/usr/src/app -v /usr/src/app/node_modules -p 3000:3000 play:alpine
+# docker run --rm -it -v ${PWD}:/usr/src/app -v /usr/src/app/node_modules -p 3000:3000 kanban.client:alpine
