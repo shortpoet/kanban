@@ -15,7 +15,7 @@ class UpdateTask {
 export class TaskResolver {
 
   @Mutation(returns => Task)
-  async updatingTask(@Arg('task') updateTask: UpdateTask): Promise<Task> {
+  async updateTask(@Arg('task') updateTask: UpdateTask): Promise<Task> {
     const { id, categoryId } = updateTask;
     const repo = getRepository(Task);
     await repo.update({ id }, { categoryId });

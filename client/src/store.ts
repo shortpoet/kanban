@@ -97,14 +97,14 @@ class Store {
       const query = `
         mutation {
           updateTask(task: { id: ${id}, categoryId: ${categoryId} }) {
-            category {
+            categories {
               id
             }
           }
         }
       `
       const json: { data: { updateTask: ITask } } = await graphFetch(url, query);
-      this.state.currentProject.tasks[id].categoryId = json.data.updateTask.categoryId;
+      this.state.currentProject.tasks[id].categoryId = parseInt(json.data.updateTask.categories.id);
     } catch (error) {
       console.log(`Error when fetching: ${error}`);
     }
