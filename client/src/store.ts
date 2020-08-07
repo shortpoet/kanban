@@ -1,4 +1,4 @@
-import { reactive, readonly } from 'vue';
+import { reactive, readonly, provide, inject } from 'vue';
 import { ISelectProject } from "./interfaces/ISelectProject";
 import { graphFetch } from './ajax';
 import { ICurrentProject } from './interfaces/ICurrentProject';
@@ -112,3 +112,7 @@ class Store {
 }
 
 export const store = new Store();
+
+export const provideStore = () => provide('store', store);
+
+export const useStore = (): Store => inject('store');

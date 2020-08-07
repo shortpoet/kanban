@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed, watch } from "vue";
-import { store } from "./store";
+import { provideStore, useStore } from "./store";
 import SelectProject from "./SelectProject.vue";
 import Category from "./Category.vue";
 import { ICategory } from "./interfaces/ICategory";
@@ -21,6 +21,8 @@ import { ITask } from "./interfaces/ITask";
 export default defineComponent({
   components: { SelectProject, Category },
   setup() {
+    provideStore();
+    const store = useStore();
     store.fetchProjects();
     const selectedProject = ref<string>();
     watch(selectedProject, (id) => {

@@ -15,7 +15,7 @@ import { defineComponent } from "vue";
 import { ICategory } from "./interfaces/ICategory";
 import { ITask } from "./interfaces/ITask";
 import DraggableTask from './DraggableTask.vue'
-import { store } from "./store";
+import { useStore } from "./store";
 
 export default defineComponent({
   components: {
@@ -30,6 +30,7 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const store = useStore();
     return {
       onDrop: (e: DragEvent) => {
         const id = e.dataTransfer.getData('text/plain');

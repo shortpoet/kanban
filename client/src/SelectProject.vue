@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { ISelectProject } from "../interfaces/ISelectProject";
+import { ISelectProject } from "./interfaces/ISelectProject";
 
 export default defineComponent({
   props: {
