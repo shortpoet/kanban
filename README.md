@@ -56,22 +56,28 @@ docker-compose up
 ./docker/db-shell.sh
 ```
 
-- run tests in container
+- run client tests in container
 
 ```bash
-./docker/app-run-test.sh
+./docker/client-run-test.sh
 ```
 
-- shell into app using docker run
+- run server tests in container
 
 ```bash
-./docker/app-run-shell.sh
+./docker/server-run-test.sh
 ```
 
-- or into running container using docker exec
+- shell into client using docker run
 
 ```bash
-./docker/app-shell.sh
+./docker/client-run-shell.sh
+```
+
+- or into running container using docker exec (use 'u' script for ubuntu)
+
+```bash
+./docker/client-a-shell.sh
 ```
 
 ## setup
